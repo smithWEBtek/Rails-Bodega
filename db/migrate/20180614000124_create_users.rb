@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :password_digest
       t.integer :money
+      t.boolean :admin, :default => false
     end
   end
 end

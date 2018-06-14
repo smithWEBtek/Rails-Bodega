@@ -19,7 +19,7 @@ Views
 # Step 2: Allow users to CRUD a items
 
 create an item
-see all of the itmes
+see all of the items
 show the items
 
 I want people to sign into an app and buy items from the store. They should see every item the store has.
