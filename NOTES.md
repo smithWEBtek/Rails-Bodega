@@ -27,11 +27,12 @@ They'll be able to buy individual items, they can add items to a cart and buy th
 
 User
   - has many items
+  - has many purchases, through items 
 
 Item
-  - belongs to a store
+  - belongs to a purchases
   - belongs to a user
 
-Store
+Purchase
   - has many user through items
   - has many items
