@@ -1,11 +1,11 @@
 # Step 1: Create basic theme
 
 / - see a non dynamic page of the theme
-Get /items -> shows all items
-Get /items/:id -> shows the specific item
-Get /items/new -> create a new item from a form
-Post /items -> submits new item form
-Get /items/:id/edit - edits item form
+get /signin
+post /sessions/create
+delete /signout
+post /purchases/new
+
 
 URLs
 Routes
@@ -27,7 +27,7 @@ They'll be able to buy individual items, they can add items to a cart and buy th
 
 User
   - has many items
-  - has many purchases, through items 
+  - has many purchases, through items
 
 Item
   - belongs to a purchases
