@@ -1,4 +1,6 @@
 class PurchasesController < ApplicationController
+  before_action :set_purchase, only: [:show, :edit, :update, :destroy]
+
   def index
     @purchases = Purchase.all
   end
