@@ -15,6 +15,14 @@ class PurchasesController < ApplicationController
   end
 
   def create
+    @purchase = Purchase.new(purchase_params)
+    respond_to do |format|
+      if @purchase.save
+        format.html { redirect_to @purchase, notice: 'Purchase was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def update
