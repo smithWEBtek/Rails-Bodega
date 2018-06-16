@@ -6,5 +6,7 @@
     <% end %>
     <p><strong>Name:</strong> <%= @user.name %></p>
     <p><strong>Money:</strong> $<%= @user.money %></p>
+    <p><%= link_to 'Edit', edit_user_path(@user) %></p>
+    <p><%= link_to 'See Purchases', purchases_path %></p>
   </div>
 </div>
