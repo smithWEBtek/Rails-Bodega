@@ -1,0 +1,26 @@
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.text_field :password, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :money %><br>
+    <%= f.number_field :money, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :admin, "Check box if you're the store owner" %>
+    <%= f.check_box :admin, class:"form-check-input" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+
+  <% end %>
