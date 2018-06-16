@@ -1,2 +1,26 @@
-<h1>Purchases#index</h1>
-<p>Find me in app/views/purchases/index.html.erb</p>
+<h1>Listing Purchases</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    <tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Price</strong></td>
+      <td><strong>Quantity</strong></td>
+    </tr>
+    <% @purchases.each do |purchase| %>
+      <tr>
+
+        <td><%= purchase.name %></td>
+        <td><%= purchase.price %></td>
+        <td><%= purchase.quantity %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
