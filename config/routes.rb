@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'signin', to: "sessions#new"
   post "/sessions/create", to: "sessions#create"
   delete '/signout', to: "session#destroy"
-  post "/itesms/new", to: "tiems#new"
+  post "/items/new", to: "items#new"
   resources :users
   resources :purchases
 end
