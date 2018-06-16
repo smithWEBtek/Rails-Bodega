@@ -18,6 +18,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
     respond_to do |format|
       if @purchase.save
+        binding.pry
         format.html { redirect_to @purchase, notice: 'Purchase was successfully created.' }
       else
         format.html { render :new }

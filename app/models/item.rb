@@ -30,4 +30,5 @@ class Item < ActiveRecord::Base
 
   def no_more_in_stock
     "Sorry, there are no more #{self.purchase.name} in stock"
+  end
 end
