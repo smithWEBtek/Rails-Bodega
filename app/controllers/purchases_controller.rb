@@ -4,7 +4,7 @@ class PurchasesController < ApplicationController
   end
 
   def show
-
+    @item = Item.new
   end
 
   def new
@@ -21,5 +21,19 @@ class PurchasesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def set_purchase
+    @purchase = Purchase.find(params[:id])
+  end
+
+  def purchase_params
+    params.require(:purchase).permit(
+      :name,
+      :price,
+      :quantity
+    )
   end
 end
