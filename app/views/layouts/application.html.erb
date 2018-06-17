@@ -10,10 +10,15 @@
   </head>
 
   <body>
-    <%= link_to "Home", root_path %>
-    <%= link_to "Sign Up", new_user_path %>
-    <%= link_to "Log in", signin_path %>
-
+    <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+    <% if current_user %>
+    <li><%= link_to "Hello, #{current_user.name}!", user_path(current_user) %></li>
+    <li><%= link_to "Purchases", purchases_path %></li>
+    <li><%= link_to "Log out", signout_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Sign Up", new_user_path %></li>
+      <li><%= link_to "Log in", signin_path %></li>
+    <% end %>
     <%= yield %>
   </body>
 </html>
