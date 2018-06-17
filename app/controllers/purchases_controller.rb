@@ -28,6 +28,13 @@ class PurchasesController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @purchase.update(purchase_params)
+        format.html { redirect_to @purchase, notice: "Purcahse was successflly updated."}
+      else
+        format.htnl { render :edit }
+      end
+    end
   end
 
   def destroy

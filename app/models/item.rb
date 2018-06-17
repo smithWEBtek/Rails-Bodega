@@ -2,6 +2,18 @@ class Item < ActiveRecord::Base
   belongs_to :users
   belongs_to :purchases
 
+  def buy_item
+    enough_money, still_in_stock = meet_requirements
+    if enough_money && still_in_stock
+      update_puchase
+    elsif still_in_stock && !enough_money
+      "Sorry. " + Not_enough_money
+    elsif enough_money && !still_in_stock
+      "Sorry. " + no_more_in_stock
+    end
+  end
+
+
   def meet_requirements
     enough_money, still_in_stock = false
     if self.user.money >= self.purchase.price
@@ -13,7 +25,7 @@ class Item < ActiveRecord::Base
     return [enough_money, still_in_stock]
   end
 
-  def buy_item
+  def update_puchase
     new_quantity = self.purchase.quantity - 1
     new_money = self.user.money - self.purchase.price
     self.user.update(

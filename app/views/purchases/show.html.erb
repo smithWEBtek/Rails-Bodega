@@ -7,8 +7,8 @@
     <% if current_user.admin %>
       <%= link_to 'Edit Purchase', [:edit, @purchase] %></p>
     <% else %>
-      <form action="/purchases/new" method="post">
-        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s. :value => form_authenticity_token)  %>
+      <form action="/items/new" method="post">
+        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token)  %>
         <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
         <%= tag(:input, :type => "hidden", :name => :purchase_id, :value => @purchase.id) %>
         <input class="btn btn-light" type="submit" value="Purchase">
