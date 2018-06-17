@@ -20,7 +20,11 @@
         <td><%= purchase.name %></td>
         <td>$<%= purchase.price %></td>
         <td><%= purchase.quantity %></td>
+        <% if current_user.admin%>
         <td><%= link_to "Show #{purchase.name}", purchase_path(purchase) %></td>
+        <% else %>
+        <td><%= link_to "Go on #{purchase.name}", purchase_path(purchase) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

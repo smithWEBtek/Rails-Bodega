@@ -14,6 +14,11 @@
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="<%= root_url %>">Home</a>
           <% if current_user %>
           <a class="navbar-brand" href="<%= purchases_path %>">Purchases</a>
@@ -22,6 +27,9 @@
           <a class="navbar-brand" href="<%= new_user_path %>">Sign Up</a>
           <a class="navbar-brand" href="<%= signin_path %>">Log in</a>
           <% end %>
+        </div>
+      </div class="navbar-collapse collapse">
+    </div>
 
 
 
