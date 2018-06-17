@@ -1,5 +1,11 @@
 <div class="center">
 
+  <% if @message %>
+    <div class="center alert">
+      <p><%= @message %></p>
+    </div>
+  <% end %>
+
   <div class="info">
     <% if @user.admin %>
       <p><strong>ADMIN</strong></p>

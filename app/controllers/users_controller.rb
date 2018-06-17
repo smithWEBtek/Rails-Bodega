@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @message = params[:message] if params[:message]
+    @message ||= false
+  end
+
   def create
     @user = User.new(user_params)
     respond_to do |format|
