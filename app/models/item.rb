@@ -1,13 +1,13 @@
 class Item < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :purchases
+  belongs_to :user
+  belongs_to :purchase
 
   def buy_item
     enough_money, still_in_stock = meet_requirements
     if enough_money && still_in_stock
       update_puchase
     elsif still_in_stock && !enough_money
-      "Sorry. " + Not_enough_money
+      "Sorry. " + not_enough_money
     elsif enough_money && !still_in_stock
       "Sorry. " + no_more_in_stock
     end
@@ -36,7 +36,7 @@ class Item < ActiveRecord::Base
     )
   end
 
-  def Not_enough_money
+  def not_enough_money
     "You don't have enough money to buy #{self.purchase.name}"
   end
 

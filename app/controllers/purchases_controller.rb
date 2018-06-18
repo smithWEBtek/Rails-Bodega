@@ -3,6 +3,7 @@ class PurchasesController < ApplicationController
 
   def index
     @purchases = Purchase.all
+    @user = User.find(session[:user_id])
   end
 
   def show

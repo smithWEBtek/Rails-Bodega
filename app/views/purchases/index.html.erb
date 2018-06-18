@@ -31,10 +31,10 @@
 </table>
 <br>
 
-<% if @user %>
+<% if @user.admin %>
+  <p><%= link_to "New Purchase", new_purchase_path %></p>
+<% else %>
   <p>
     <%= link_to "Back to Profile", user_path(@user), {:class => "btn btn-primary"} %>
   </p>
-<% else %>
-<p><%= link_to "New Purchase", new_purchase_path %></p>
 <% end %>

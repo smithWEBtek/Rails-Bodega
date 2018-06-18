@@ -5,8 +5,8 @@ class ItemsController < ApplicationController
       :user_id => params[:user_id],
       :purchase_id => params[:purchase_id]
     )
-
-    redirect_to user_path(@item.user)
+    @message = @item.buy_item
+    redirect_to user_path(@item.user, :message => @message)
   end
 
 end
