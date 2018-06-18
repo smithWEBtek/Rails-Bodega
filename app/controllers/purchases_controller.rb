@@ -31,7 +31,7 @@ class PurchasesController < ApplicationController
   def update
     respond_to do |format|
       if @purchase.update(purchase_params)
-        format.html { redirect_to @purchase, notice: "Purcahse was successflly updated."}
+        format.html { redirect_to @purchase, notice: "Purcahse was successfully updated."}
       else
         format.htnl { render :edit }
       end
@@ -39,6 +39,10 @@ class PurchasesController < ApplicationController
   end
 
   def destroy
+    @purchase.destroy
+    respond_to do |format|
+      format.html { redirect_to purchases_url, notice: 'Attraction was successfully destroyed.'}
+    end
   end
 
   private
