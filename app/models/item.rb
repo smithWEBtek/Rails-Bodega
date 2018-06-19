@@ -9,7 +9,7 @@ class Item < ActiveRecord::Base
     elsif still_in_stock && !enough_money
       "Sorry. " + not_enough_money
     elsif enough_money && !still_in_stock
-      "Sorry. " + no_more_in_stock
+      no_more_in_stock
     end
   end
 

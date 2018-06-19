@@ -2,7 +2,7 @@
 
   <div class="info">
     <p><strong>Name:</strong> <%= @purchase.name %></p>
-    <p><strong>Price:</strong> <%= @purchase.price %></p>
+    <p><strong>Price:</strong> $<%= @purchase.price %></p>
     <p><strong>Quantity:</strong> <%= @purchase.quantity %></p>
     <% if current_user.admin %>
       <%= link_to 'Edit Purchase', [:edit, @purchase] %></p>
