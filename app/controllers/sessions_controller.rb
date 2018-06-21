@@ -11,9 +11,8 @@ class SessionsController < ApplicationController
 
   def create
     if auth
-      @user = User.find_or_create_by(id: auth['id']) do |u|
-        u.name = auth['info']['name']
-      end
+      @user = User.find_or_create_by(name: auth['info']['name'])
+      binding.pry
       session[:user_id] = @user.id
       redirect_to user_path(@user), notice: "Welcome to The Bodega!!"
     elsif
