@@ -23,7 +23,7 @@
         <% if current_user.admin%>
         <td><%= link_to "Show #{purchase.name}", purchase_path(purchase) %></td>
         <% else %>
-        <td><%= link_to "Go on #{purchase.name}", purchase_path(purchase) %></td>
+        <td><%= link_to "Pick up #{purchase.name}", purchase_path(purchase) %></td>
         <% end %>
       </tr>
     <% end %>
