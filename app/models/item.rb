@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
   belongs_to :user
   belongs_to :purchase
+  belongs_to :cart
 
   def buy_item
     enough_money, still_in_stock = meet_requirements
