@@ -9826,3 +9826,280 @@ Completed 200 OK in 75ms (Views: 66.1ms | ActiveRecord: 0.6ms)
   [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 2]]
   [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPurchase Load (0.6ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (5.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (3.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPurchase Load (2.3ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."cart_id" = ? LIMIT ?[0m  [["cart_id", 1], ["LIMIT", 11]]
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" WHERE "purchases"."cart_id" = ?[0m  [["cart_id", 1]]
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "purchases" ON "items"."purchase_id" = "purchases"."id" WHERE "purchases"."cart_id" = ? LIMIT ?[0m  [["cart_id", 1], ["LIMIT", 11]]
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "purchases" ON "items"."purchase_id" = "purchases"."id" WHERE "purchases"."cart_id" = ? LIMIT ?[0m  [["cart_id", 1], ["LIMIT", 11]]
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "items" INNER JOIN "purchases" ON "items"."purchase_id" = "purchases"."id" WHERE "purchases"."cart_id" = ? LIMIT ?[0m  [["cart_id", 1], ["LIMIT", 1]]
+  [1m[36mPurchase Load (1.6ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPurchase Load (0.5ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPurchase Load (0.8ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (7.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/purchases/1" for 127.0.0.1 at 2018-06-24 08:34:40 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mPurchase Load (0.5ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:51
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 802ms (Views: 745.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-24 08:34:54 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (14.1ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 86ms (Views: 59.9ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-06-24 08:34:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 59ms (Views: 52.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-24 08:34:58 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 261ms (Views: 253.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/purchases/1" for 127.0.0.1 at 2018-06-24 08:35:01 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mPurchase Load (0.7ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:51
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 86ms (Views: 80.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/items/new" for 127.0.0.1 at 2018-06-24 08:35:03 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"authenticity_token"=>"miyWspvItuBorQQiG8t8FI8fz4noRdGP3GAanuXmEqRqdnHK1aGlLcGsnxtnrIoDvqEzmhVeyRImbLYnAEyRKw==", "user_id"=>"2", "purchase_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/items_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:32
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE "users" SET "money" = ? WHERE "users"."id" = ?[0m  [["money", 49.0], ["id", 2]]
+  ↳ app/models/item.rb:32
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/item.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:35
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/item.rb:35
+Redirected to http://localhost:3000/users/2?message=false
+Completed 302 Found in 56ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/users/2?message=false" for 127.0.0.1 at 2018-06-24 08:35:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"message"=>"false", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 224ms (Views: 219.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-24 08:36:25 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.7ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 190ms (Views: 151.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/purchases/3" for 127.0.0.1 at 2018-06-24 08:36:29 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:51
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 102ms (Views: 96.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/items/new" for 127.0.0.1 at 2018-06-24 08:36:31 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"authenticity_token"=>"Ul8DZgdY3bkItTZwHq8NGMc5xLivoFtLvxlFqXlUH3+iBeQeSTHOdKG0rUliyPsP9oc4q1K7Q9ZFFekQnP6c8A==", "user_id"=>"2", "purchase_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/items_controller.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:32
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "money" = ? WHERE "users"."id" = ?[0m  [["money", 34.0], ["id", 2]]
+  ↳ app/models/item.rb:32
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/item.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:35
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/item.rb:35
+Redirected to http://localhost:3000/users/2?message=false
+Completed 302 Found in 28ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/2?message=false" for 127.0.0.1 at 2018-06-24 08:36:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"message"=>"false", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 88ms (Views: 82.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-24 08:36:39 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 155ms (Views: 149.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/purchases/3" for 127.0.0.1 at 2018-06-24 08:36:47 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:51
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 76ms (Views: 69.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/items/new" for 127.0.0.1 at 2018-06-24 08:36:49 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"authenticity_token"=>"3OuzxkyzNRlKTKkHcgvFPAP2/gQWtDfR/y7IFbgs+dQssVS+Atom1ONNMj4ObDMrMkgCF+uvL0wFImSsXYZ6Ww==", "user_id"=>"2", "purchase_id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/items_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:32
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "money" = ? WHERE "users"."id" = ?[0m  [["money", 19.0], ["id", 2]]
+  ↳ app/models/item.rb:32
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/item.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:35
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/item.rb:35
+Redirected to http://localhost:3000/users/2?message=false
+Completed 302 Found in 16ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/2?message=false" for 127.0.0.1 at 2018-06-24 08:36:49 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"message"=>"false", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCart Load (1.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (17.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "purchases" ON "items"."purchase_id" = "purchases"."id" WHERE "purchases"."cart_id" = ? LIMIT ?[0m  [["cart_id", 1], ["LIMIT", 11]]
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPurchase Load (1.8ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."cart_id" = ? LIMIT ?[0m  [["cart_id", 1], ["LIMIT", 11]]
+  [1m[36mCart Load (3.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" ORDER BY "carts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 1], ["LIMIT", 11]]
