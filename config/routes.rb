@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'carts/show'
   root 'static_pages#home'
   get 'signin', to: "sessions#new"
   post "/sessions/create", to: "sessions#create"
