@@ -1,7 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :user
   belongs_to :purchase
-  belongs_to :cart
 
   def buy_item
     # This uses the other methods to let the user know if they can buy the item and updates the purchases info
