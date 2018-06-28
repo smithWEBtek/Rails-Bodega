@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
 
+  def show
+  end
+  
   def new
     # This doesn't save the item
     @item = Item.create(

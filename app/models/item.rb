@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
   belongs_to :user
   belongs_to :purchase
 
-  # Create a new method to store value to store purchase value to order items 
+  # Create a new method to store value to store purchase value to order items
 
   def buy_item
     # This uses the other methods to let the user know if they can buy the item and updates the purchases info
@@ -52,5 +52,6 @@ class Item < ActiveRecord::Base
     # If the purchase isn't in stock you can't buy it.
     "Sorry, there are no more #{self.purchase.name} in stock"
   end
+
 
 end
