@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 2018_06_27_231813) do
   create_table "items", force: :cascade do |t|
     t.integer "user_id"
     t.integer "purchase_id"
-    t.integer "cart_id"
-    t.index ["cart_id"], name: "index_items_on_cart_id"
     t.index ["purchase_id"], name: "index_items_on_purchase_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end

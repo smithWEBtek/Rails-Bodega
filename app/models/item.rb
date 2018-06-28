@@ -2,12 +2,15 @@ class Item < ActiveRecord::Base
   belongs_to :user
   belongs_to :purchase
 
+  # Create a new method to store value to store purchase value to order items 
+
   def buy_item
     # This uses the other methods to let the user know if they can buy the item and updates the purchases info
+    # Can I associate the purchase here with an order_item? Can I create a new order item from this model?
     enough_money, still_in_stock = meet_requirements
     if enough_money && still_in_stock
+      binding.pry
       update_puchase
-      self.cart << self.purchase
     elsif still_in_stock && !enough_money
       "Sorry. " + not_enough_money
     elsif enough_money && !still_in_stock
@@ -48,14 +51,6 @@ class Item < ActiveRecord::Base
   def no_more_in_stock
     # If the purchase isn't in stock you can't buy it.
     "Sorry, there are no more #{self.purchase.name} in stock"
-  end
-
-  def cart
-    self.cart
-  end
-
-  def add_to_cart
-    cart << self.purchase
   end
 
 end
