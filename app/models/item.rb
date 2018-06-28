@@ -9,7 +9,6 @@ class Item < ActiveRecord::Base
     # Can I associate the purchase here with an order_item? Can I create a new order item from this model?
     enough_money, still_in_stock = meet_requirements
     if enough_money && still_in_stock
-      binding.pry
       update_puchase
     elsif still_in_stock && !enough_money
       "Sorry. " + not_enough_money

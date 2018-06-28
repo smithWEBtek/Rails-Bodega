@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
 
   def cart
     # Shows the collection of purchases the user has
-    self.purchases
+    self.purchases.each do |purchase|
+      purchase.name 
+    end
   end
 
   def cart_total
