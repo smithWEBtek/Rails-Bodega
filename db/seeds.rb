@@ -12,3 +12,8 @@ Purchase.create(name: "Tide Liquid Detergent", price: 15.0, quantity: 10)
 Purchase.create(name: "Snickers Minis", price: 4.0, quantity: 10)
 Purchase.create(name: "Tortilla Chips", price: 4.0, quantity: 10)
 Purchase.create(name: "Oatly Oat Milk", price: 5.0, quantity: 10)
+Purchase.create(name: "Glad Zipper Food Storage bags", price: 3.0, quantity: 10)
+
+User.delete_all
+User.create(name: "Oscar McCamey", password: "dog", money: 100)
+User.create(name: "Olive DeAngelis", password: "dog", money: 100, amdin: true)
