@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
   resources :users do
     resource :cart, only: [:show]
+    resources :purchases, only: [:new]
   end
 
   resources :purchases
