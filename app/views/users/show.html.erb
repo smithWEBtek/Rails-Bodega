@@ -16,9 +16,10 @@
     <p><strong>Money:</strong> $<%= @user.money %></p>
     <% if @user.admin %>
     <p><%= link_to 'Edit', edit_user_path(@user) %></p>
+    <p><%= link_to 'See Purchases', purchases_path %></p>
     <% else %>
     <p><%= link_to 'See Cart', user_cart_path(@user) %></p>
-    <p><%= link_to 'See Purchases', purchases_path %></p>
+    <p><%= link_to 'Go to Purchases', purchases_path %></p>
     <% end %>
   </div>
 </div>

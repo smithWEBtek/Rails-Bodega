@@ -11,7 +11,7 @@
     <tr>
       <td><strong>Name</strong></td>
       <td><strong>Price</strong></td>
-      <td><strong>Quantity</strong></td>
+      <td><strong>Amount in Stock</strong></td>
       <td><strong>Details</strong></td>
     </tr>
     <% @purchases.each do |purchase| %>
@@ -21,9 +21,9 @@
         <td>$<%= purchase.price %></td>
         <td><%= purchase.quantity %></td>
         <% if current_user.admin%>
-        <td><%= link_to "Show #{purchase.name}", purchase_path(purchase) %></td>
+        <td><%= link_to "Show #{purchase.name}", purchase_path(purchase), {:class => "btn btn-primary"} %></td>
         <% else %>
-        <td><%= link_to "Pick up #{purchase.name}", purchase_path(purchase) %></td>
+        <td><%= link_to "Pick up #{purchase.name}", purchase_path(purchase), {:class => "btn btn-primary"} %></td>
         <% end %>
       </tr>
     <% end %>
@@ -32,7 +32,7 @@
 <br>
 
 <% if @user.admin %>
-  <p><%= link_to "New Purchase", new_user_purchase_path(@user) %></p>
+  <p><%= link_to "New Purchase", new_user_purchase_path(@user), {:class => "btn btn-primary"} %></p>
   <p>
     <%= link_to "Back to Profile", user_path(@user), {:class => "btn btn-primary"} %>
   </p>

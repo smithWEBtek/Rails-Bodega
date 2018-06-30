@@ -40,7 +40,8 @@ class PurchasesController < ApplicationController
   end
 
   def destroy
-    @purchase.destroy
+    # Delets the purchasing you're looking at in the purchases#show view
+    Purchase.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to purchases_url, notice: 'Attraction was successfully destroyed.'}
     end
