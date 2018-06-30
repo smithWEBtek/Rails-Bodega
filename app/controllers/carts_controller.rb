@@ -6,9 +6,4 @@ class CartsController < ApplicationController
   # Should I use a def new to purchase the cart?
 
   # Should I use a def edit to edit the cart?
-  def new
-    @user = User.find(params[:user_id])
-    @purchase = Purchase.new
-    @purchases = Purchase.all
-  end
 end
