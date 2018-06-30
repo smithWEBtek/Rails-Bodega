@@ -32,7 +32,7 @@ class PurchasesController < ApplicationController
   def update
     respond_to do |format|
       if @purchase.update(purchase_params)
-        format.html { redirect_to @purchase, notice: "Purcahse was successfully updated."}
+        format.html { redirect_to @purchase, notice: "Purchase was successfully updated."}
       else
         format.htnl { render :edit }
       end

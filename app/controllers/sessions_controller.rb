@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
 
   def create
     if auth_hash
+      # if logging in through facebook, create a password, assign them amount of money, and save the user
       @user = User.find_or_create_by(name: auth_hash['info']['name'])
       @user.password = SecureRandom.urlsafe_base64(n=6)
       @user.money = 25
