@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post "/items/new", to: "items#new"
   get '/auth/facebook/callback' => 'sessions#create'
   resources :users do
-    resource :cart, only: [:show, :new]
+    resource :cart, only: [:show]
   end
 
   resources :purchases
