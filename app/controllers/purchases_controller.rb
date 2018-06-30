@@ -11,6 +11,7 @@ class PurchasesController < ApplicationController
   end
 
   def new
+    # can I make this a nested route?
     @purchase = Purchase.new
   end
 
