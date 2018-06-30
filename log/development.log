@@ -50836,3 +50836,390 @@ Processing by PurchasesController#index as HTML
 Completed 200 OK in 183ms (Views: 176.6ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-06-30 12:40:22 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 468ms (Views: 430.8ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-06-30 12:40:29 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"reE6EQiSNCzU21v6CA293v7NmacxLBNpicYzizWojXGJMqOahED11i/GmTTvTFjjYCXlh22/Llws48MO5T7RDw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-30 12:40:29 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 71ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-06-30 12:40:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 96ms (Views: 92.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-06-30 12:40:32 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-06-30 12:40:33 -0400
+Started GET "/auth/facebook/callback?code=AQBWzMv3r3C3SzqC31YLhv7ZE8lRPbFfkFy5APu382I95M9ihoDvxDIqsv8eKKxX4sPdiCde66709kSxW1iyhdmBb0_OPIE0wl5NAQCeEK1S2qryk2vAqq_6kaHNvl7IMTCUXarNhESnswRDz_bFyRlh7KASadGx2JXerUzs993tDPzIWrLdbSlq-J5_iE2M8kOTGpD1HIP4rZ3h5LhSonND06vyoS-dTHbSedsPJ0OhDafvd5BFUDySoRg31QhjKJeAHxrQFGWnUV3Ve1U7YCjfPW_OGBz81HkhNsWKsmA5_eYERr95QS7iEeMY4DAVplw&state=838dfda7ecd6239803a3357ea70fc0a2e9238929652880fc" for 127.0.0.1 at 2018-06-30 12:40:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBWzMv3r3C3SzqC31YLhv7ZE8lRPbFfkFy5APu382I95M9ihoDvxDIqsv8eKKxX4sPdiCde66709kSxW1iyhdmBb0_OPIE0wl5NAQCeEK1S2qryk2vAqq_6kaHNvl7IMTCUXarNhESnswRDz_bFyRlh7KASadGx2JXerUzs993tDPzIWrLdbSlq-J5_iE2M8kOTGpD1HIP4rZ3h5LhSonND06vyoS-dTHbSedsPJ0OhDafvd5BFUDySoRg31QhjKJeAHxrQFGWnUV3Ve1U7YCjfPW_OGBz81HkhNsWKsmA5_eYERr95QS7iEeMY4DAVplw", "state"=>"838dfda7ecd6239803a3357ea70fc0a2e9238929652880fc"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Lekan Nicholson"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:17
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "money") VALUES (?, ?, ?)[0m  [["name", "Lekan Nicholson"], ["password_digest", "$2a$10$9bB4LVh4Jah2IXZsj/gNY.eI78IUa2E6QruCfHpM.OP4ujs/U0Y5K"], ["money", 25.0]]
+  ↳ app/controllers/sessions_controller.rb:17
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:17
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 89ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:40:40 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 37.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-06-30 12:41:02 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GaDYcDWc/sr5yhSjWHV7dFyBoPHPagOdPTVIN3kSJwA9c0H7uU4/MALX1m2/NJ5Jwmnc0ZP5PqiYELiyqYR7fg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-30 12:41:02 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-06-30 12:41:04 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 128ms (Views: 124.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-06-30 12:41:07 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-06-30 12:41:08 -0400
+Started GET "/auth/facebook/callback?code=AQBzxY7viOVZZQkQx3EKStIPi8pe_SC92C0s9eqpe2mvk4Y0VqgcPzUyo5VjW06Y7_nX83LkztFm1zgNCNi1_envavxNyXZ85_w7ZbG7xL0pWn-HaDRWkSz_HhPRGPZca1V7ocSPbuss4J1dbBw6kfjYmL0IJp2I4y1MolGM90WVoDgjnJarQC-bAig3LUzGBv_eoaUekOp3cXJ9oqvuIvCHgLF85H1bqgZ6P3HhUJ9ktuCVawb7SbqM68As-i4ss4JXHZSSjR6V90YvYhYV06M4BtXNVTphfmwsxxU-adp7XngUAX8LWpT5q65QpyyJeE0&state=a678216ed44ad5def5f7653ef30905b9bf57d4ea505a0e28" for 127.0.0.1 at 2018-06-30 12:41:08 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBzxY7viOVZZQkQx3EKStIPi8pe_SC92C0s9eqpe2mvk4Y0VqgcPzUyo5VjW06Y7_nX83LkztFm1zgNCNi1_envavxNyXZ85_w7ZbG7xL0pWn-HaDRWkSz_HhPRGPZca1V7ocSPbuss4J1dbBw6kfjYmL0IJp2I4y1MolGM90WVoDgjnJarQC-bAig3LUzGBv_eoaUekOp3cXJ9oqvuIvCHgLF85H1bqgZ6P3HhUJ9ktuCVawb7SbqM68As-i4ss4JXHZSSjR6V90YvYhYV06M4BtXNVTphfmwsxxU-adp7XngUAX8LWpT5q65QpyyJeE0", "state"=>"a678216ed44ad5def5f7653ef30905b9bf57d4ea505a0e28"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Lekan Nicholson"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:17
+  [1m[36mUser Update (2.5ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$J.s54EKAjAzwpfKYlghfB.UBTY6fBTe5.zFU3rmTiXM4FhTcUroGW"], ["id", 3]]
+  ↳ app/controllers/sessions_controller.rb:17
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:17
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 68ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:41:08 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 93ms (Views: 81.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-30 12:41:18 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 127ms (Views: 112.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:41:22 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 180ms (Views: 172.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:42:37 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (132.1ms)
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_cart' for #<#<Class:0x007fbfb6772040>:0x007fbfb5ca9690>
+Did you mean?  user_cart_url
+               user_cart_path
+               user_path
+               users_path
+               user_url):
+    12:     <% end %>
+    13:     <p><strong>Name:</strong> <%= @user.name %></p>
+    14:     <p><strong>Money:</strong> $<%= @user.money %></p>
+    15:     <p><%= link_to 'Edit', user_cart(@user) %></p>
+    16:     <p><%= link_to 'See Cart', purchases_path %></p>
+    17:     <p><%= link_to 'See Purchases', purchases_path %></p>
+    18:   </div>
+  
+app/views/users/show.html.erb:15:in `_app_views_users_show_html_erb__2802801400973248907_70230688373680'
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:42:48 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 295ms (Views: 291.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-30 12:42:51 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (4.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 103ms (Views: 67.6ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:43:19 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 241ms (Views: 233.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-30 12:43:20 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 125ms (Views: 118.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:43:21 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 202ms (Views: 197.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-30 12:43:22 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 105ms (Views: 98.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:43:24 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:43:36 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"carts", :id=>"3"}, missing required keys: [:user_id]):
+    12:     <% end %>
+    13:     <p><strong>Name:</strong> <%= @user.name %></p>
+    14:     <p><strong>Money:</strong> $<%= @user.money %></p>
+    15:     <p><%= link_to 'Edit', user_cart_path %></p>
+    16:     <p><%= link_to 'See Cart', purchases_path %></p>
+    17:     <p><%= link_to 'See Purchases', purchases_path %></p>
+    18:   </div>
+  
+app/views/users/show.html.erb:15:in `_app_views_users_show_html_erb__2802801400973248907_70230731854380'
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:44:00 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-30 12:44:02 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 84ms (Views: 78.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-30 12:44:48 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 88ms (Views: 85.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:44:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 136ms (Views: 131.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3/cart" for 127.0.0.1 at 2018-06-30 12:44:52 -0400
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:3
+  Rendering carts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:8
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:13
+  Rendered carts/show.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 112ms (Views: 105.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-06-30 12:44:59 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 156ms (Views: 150.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:45:08 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 187ms (Views: 181.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-06-30 12:46:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+

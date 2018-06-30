@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
   def create
     if auth_hash
       @user = User.find_or_create_by(name: auth_hash['info']['name'])
-      @user.password = "password"
-      @user.money = 20
+      @user.password = SecureRandom.urlsafe_base64(n=6)
+      @user.money = 25
       @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user), notice: "Welcome to The Bodega!!"
