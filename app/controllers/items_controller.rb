@@ -10,4 +10,5 @@ class ItemsController < ApplicationController
     redirect_to user_path(@item.user, :message => @message)
   end
 
+
 end

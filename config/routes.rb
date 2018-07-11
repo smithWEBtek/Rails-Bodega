@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   delete '/signout', to: "sessions#destroy"
   post "/items/new", to: "items#new"
   get '/auth/facebook/callback' => 'sessions#create'
-  get '/highestprice' => 'highprice#highestprice'
   resources :users do
-    resource :cart, only: [:show]
+    resource :cart, only: [:show, :new]
     resources :purchases, only: [:new]
   end
 

@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user), notice: "Welcome to The Bodega!!"
     elsif
-      @user = User.find_by(name: params[:user][:name])
+      @user = User.find_by(id: params[:user][:id])
       if @user && @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
         redirect_to user_path(@user), notice: "Welcome to The Bodega!!"
