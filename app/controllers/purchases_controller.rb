@@ -47,6 +47,9 @@ class PurchasesController < ApplicationController
     end
   end
 
+  def highestprice
+  end
+
   private
 
   def set_purchase

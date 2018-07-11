@@ -32,7 +32,7 @@
 <br>
 
 <% if @user.admin %>
-  <p><%= link_to "New Purchase", new_user_purchase_path(@user), {:class => "btn btn-primary"} %></p>
+  <p><%= link_to "Create Purchase", new_user_purchase_path(@user), {:class => "btn btn-primary"} %></p>
   <p>
     <%= link_to "Back to Profile", user_path(@user), {:class => "btn btn-primary"} %>
   </p>
