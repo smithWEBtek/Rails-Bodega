@@ -54915,3 +54915,1432 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 64ms (Views: 51.5ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/purchases" for 127.0.0.1 at 2018-07-11 17:36:18 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.7ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 417ms (Views: 377.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/purchases/1" for 127.0.0.1 at 2018-07-11 17:36:21 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:56
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 107ms (Views: 88.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-11 17:36:24 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 147ms (Views: 142.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-07-11 17:36:25 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GjH0J7cEUBRlsl7Z923z9238lTHqDyUnZkapwrH5cKv/eG0/1yyeZ9zEDY2QkClArcl1KM1tpIzrWeNMZksMiQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-11 17:36:25 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 88ms (Views: 86.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-07-11 17:36:27 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/sessions/new.html.erb:8
+  Rendered sessions/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 98ms (Views: 94.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2018-07-11 17:36:37 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KD4RHEKAXtwucb5c8De6FwSgsRo5beC7xr+1ayT9s6lOMHRUERfSuPObwCpkiwAGqFguF934Xy9MfxDwOwgHUA==", "user"=>{"id"=>"2", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 67ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-07-11 17:36:37 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 131ms (Views: 125.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-07-11 17:36:39 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aWuMttyH0iS5I9ss8nIFS2JmuvnfHnL4iWeQljvGKoyMIhWuvK8cVwBViHiVj9/8olNa4Ph881MEeNoY7HRWrg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-11 17:36:39 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 72ms (Views: 69.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-07-11 17:36:40 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/sessions/new.html.erb:8
+  Rendered sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 84ms (Views: 81.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2018-07-11 17:36:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cscoeiR2h5GGxNvGMMaRdwmCHYnyQCob51J6dUbW5RUUyU0yd+EL9VsupbCkeitmpXqChBbVlY9tkt/uWSNR7A==", "user"=>{"id"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 65ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-11 17:36:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-11 17:36:49 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 113ms (Views: 109.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/purchases/1" for 127.0.0.1 at 2018-07-11 17:37:03 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:56
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 82ms (Views: 75.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-11 17:54:34 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.6ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 114ms (Views: 80.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-11 17:54:36 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (62.6ms)
+Completed 200 OK in 193ms (Views: 186.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/cart" for 127.0.0.1 at 2018-07-11 17:54:37 -0400
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:3
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mPurchase Load (0.6ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8
+  Rendered carts/show.html.erb within layouts/application (68.3ms)
+Completed 200 OK in 133ms (Views: 121.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 17:54:44 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Purchase from the cart </h1>
+    2: 
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for (@items) do |f|%>
+    5: 
+    6:   <div class="form-group">
+    7:     <%= f.label :name %><br>
+  
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198655598720'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 17:54:55 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (137.5ms)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `items_path' for #<#<Class:0x007fb0cbcec308>:0x007fb0cd3fc980>
+Did you mean?  items_new_path):
+    1: <h1>Purchase from the cart </h1>
+    2: 
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for (@item) do |f|%>
+    5: 
+    6:   <div class="form-group">
+    7:     <%= f.label :name %><br>
+  
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198667241940'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 17:55:17 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (30.1ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Item id: nil, user_id: nil, purchase_id: nil>):
+     5: 
+     6:   <div class="form-group">
+     7:     <%= f.label :name %><br>
+     8:     <%= f.text_field :name, class: "form-control" %></div>
+     9: 
+    10:   <div class="form-group">
+    11:     <%= f.label :quantity %><br>
+  
+app/views/carts/new.html.erb:8:in `block in _app_views_carts_new_html_erb___302964846141361550_70198609955100'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198609955100'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 17:56:06 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 101ms (Views: 97.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 17:57:33 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 56ms (Views: 52.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 18:01:01 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 4..6)):
+    4: <%= form_for (@item), url: 'items/new', method: "post" do |f|%>
+    5: 
+    6:   <div class="form-group">
+    7:     <%= f.collection_select(:id, @items) %><br>
+    8:     <%= f.text_field :purchase_id, class: "form-control" %></div>
+    9: 
+   10:   <div class="form-group">
+  
+app/views/carts/new.html.erb:7:in `block in _app_views_carts_new_html_erb___302964846141361550_70198597799120'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198597799120'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 18:01:17 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/carts/new.html.erb:7
+  Rendered carts/new.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Item id: 1, user_id: 1, purchase_id: 3>):
+    4: <%= form_for (@item), url: 'items/new', method: "post" do |f|%>
+    5: 
+    6:   <div class="form-group">
+    7:     <%= f.collection_select(:id, @items, :id, :name) %><br>
+    8:     <%= f.text_field :purchase_id, class: "form-control" %></div>
+    9: 
+   10:   <div class="form-group">
+  
+app/views/carts/new.html.erb:7:in `block in _app_views_carts_new_html_erb___302964846141361550_70198665527360'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198665527360'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 18:01:30 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/carts/new.html.erb:7
+  Rendered carts/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 18:01:49 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `purchase_name' for #<Item id: nil, user_id: nil, purchase_id: nil>
+Did you mean?  purchase
+               purchase_id
+               purchase_id_change
+               purchase=
+               purchase_id_in_database
+               purchase_id?
+               purchase_id=):
+    4: <%= form_for (@item), url: 'items/new', method: "post" do |f|%>
+    5: 
+    6:   <div class="form-group">
+    7:     <%= f.collection_select(:purchase_name, @items, :id, :user_id) %><br>
+    8:     <%= f.text_field :purchase_id, class: "form-control" %></div>
+    9: 
+   10:   <div class="form-group">
+  
+app/views/carts/new.html.erb:7:in `block in _app_views_carts_new_html_erb___302964846141361550_70198627404420'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198627404420'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 18:02:07 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/carts/new.html.erb:7
+  Rendered carts/new.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `purchase_name' for #<Item id: 1, user_id: 1, purchase_id: 3>
+Did you mean?  purchase
+               purchase_id
+               purchase_id_change
+               purchase=
+               purchase_id_in_database
+               purchase_id?
+               purchase_id=):
+    4: <%= form_for (@item), url: 'items/new', method: "post" do |f|%>
+    5: 
+    6:   <div class="form-group">
+    7:     <%= f.collection_select(:id, @items, :id, :purchase_name) %><br>
+    8:     <%= f.text_field :purchase_id, class: "form-control" %></div>
+    9: 
+   10:   <div class="form-group">
+  
+app/views/carts/new.html.erb:7:in `block in _app_views_carts_new_html_erb___302964846141361550_70198666757680'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198666757680'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 18:02:16 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/carts/new.html.erb:7
+  Rendered carts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 18:02:56 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4: <%= form_for (@item), url: 'items/new', method: "post" do |f|%>
+    5: 
+    6:   <div class="form-group">
+    7:     <%= f.collection_select(:id, @items, :id, @purchase.name) %><br>
+    8:     <%= f.text_field :purchase_id, class: "form-control" %></div>
+    9: 
+   10:   <div class="form-group">
+  
+app/views/carts/new.html.erb:7:in `block in _app_views_carts_new_html_erb___302964846141361550_70198641929680'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198641929680'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 18:03:40 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/carts/new.html.erb:7
+  Rendered carts/new.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `Purchase' for #<Item id: 1, user_id: 1, purchase_id: 3>
+Did you mean?  purchase
+               purchase=):
+    4: <%= form_for (@item), url: 'items/new', method: "post" do |f|%>
+    5: 
+    6:   <div class="form-group">
+    7:     <%= f.collection_select(:id, @items, :id, @purchases.name) %><br>
+    8:     <%= f.text_field :purchase_id, class: "form-control" %></div>
+    9: 
+   10:   <div class="form-group">
+  
+app/views/carts/new.html.erb:7:in `block in _app_views_carts_new_html_erb___302964846141361550_70198656110900'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198656110900'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 18:03:55 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/carts/new.html.erb:7
+  Rendered carts/new.html.erb within layouts/application (13.4ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `Purchase' for #<Item id: 1, user_id: 1, purchase_id: 3>
+Did you mean?  purchase
+               purchase=):
+    4: <%= form_for (@item), url: 'items/new', method: "post" do |f|%>
+    5: 
+    6:   <div class="form-group">
+    7:     <%= f.collection_select(:id, @items, :id, @purchase.name) %><br>
+    8:     <%= f.text_field :purchase_id, class: "form-control" %></div>
+    9: 
+   10:   <div class="form-group">
+  
+app/views/carts/new.html.erb:7:in `block in _app_views_carts_new_html_erb___302964846141361550_70198597973640'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198597973640'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:08:51 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 153ms (Views: 129.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:11:23 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mPurchase Load (0.6ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  Rendered carts/new.html.erb within layouts/application (268.0ms)
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `items_path' for #<#<Class:0x007fb0c4fde3b0>:0x007fb0c5d20bb8>
+Did you mean?  items_new_path):
+    1: <h1>Purchase from the cart </h1>
+    2: 
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for @item do |f| %>
+    5:   <%= f.collection_select :purchase_name, Purchase.all, :name, :name %>
+    6:   <%= f.text_field :content %>
+    7:   <%= f.submit %>
+  
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198604928360'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:13:33 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  Rendered carts/new.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Item::ActiveRecord_Relation:0x007fb0c8f654c0>
+Did you mean?  to_query
+               to_set
+               to_ary):
+    1: <h1>Purchase from the cart </h1>
+    2: 
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for @items do |f| %>
+    5:   <%= f.collection_select :purchase_name, Purchase.all, :name, :name %>
+    6:   <%= f.text_field :content %>
+    7:   <%= f.submit %>
+  
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___302964846141361550_70198640077300'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateItems (20180614000947)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "items"[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180614000947"]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateItems (20180614000947)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180614000947_create_items.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "purchase_id" integer, "comment" varchar, CONSTRAINT "fk_rails_d4b6334db2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_0d9b1062d3"
+FOREIGN KEY ("purchase_id")
+  REFERENCES "purchases" ("id")
+)[0m
+  ↳ db/migrate/20180614000947_create_items.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  ↳ db/migrate/20180614000947_create_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_items_on_purchase_id" ON "items" ("purchase_id")[0m
+  ↳ db/migrate/20180614000947_create_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180614000947"]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/bin/rake:23
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:15:19 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  Rendered carts/new.html.erb within layouts/application (142.8ms)
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `items_path' for #<#<Class:0x007feda744ec28>:0x007feda7438770>
+Did you mean?  items_new_path):
+    1: <h1>Purchase from the cart </h1>
+    2: 
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for(@item) do |f| %>
+    5:   <%= f.collection_select :purchase_name, Purchase.all, :name, :name %>
+    6:   <%= f.text_field :content %>
+    7:   <%= f.submit %>
+  
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___1682921035497163504_70329345180640'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:20:25 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Purchase from the cart </h1>
+    2: 
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for(@user) do |f| %>
+    5:   <%= f.collection_select :purchase_name, Purchase.all, :name, :name %>
+    6:   <%= f.text_field :content %>
+    7:   <%= f.submit %>
+  
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___1682921035497163504_70329349382460'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:20:51 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (22.9ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `purchase_name' for #<User:0x007fedaccdde20>
+Did you mean?  purchases
+               purchase_ids
+               purchases=
+               purchase_ids=):
+    2: 
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for(@user) do |f| %>
+    5:   <%= f.collection_select :purchase_name, Purchase.all, :name, :name %>
+    6:   <%= f.text_field :content %>
+    7:   <%= f.submit %>
+    8: <% end %>
+  
+app/views/carts/new.html.erb:5:in `block in _app_views_carts_new_html_erb___1682921035497163504_70329391572420'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___1682921035497163504_70329391572420'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:21:33 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/new.html.erb within layouts/application
+  Rendered carts/new.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `purchase_id' for #<User:0x007fedaa8cfb28>
+Did you mean?  purchase_ids
+               purchase_ids=
+               purchases
+               purchases=):
+    2: 
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for(@user) do |f| %>
+    5:   <%= f.collection_select :purchase_id, Purchase.all, :name, :name %>
+    6:   <%= f.text_field :content %>
+    7:   <%= f.submit %>
+    8: <% end %>
+  
+app/views/carts/new.html.erb:5:in `block in _app_views_carts_new_html_erb___1682921035497163504_70329372668540'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___1682921035497163504_70329372668540'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:21:38 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "purchases"."id" FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/carts/new.html.erb:5
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/carts/new.html.erb:5
+  Rendered carts/new.html.erb within layouts/application (50.9ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `content' for #<User:0x007feda7cde7f8>):
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for(@user) do |f| %>
+    5:   <%= f.collection_select :purchase_ids, Purchase.all, :name, :name %>
+    6:   <%= f.text_field :content %>
+    7:   <%= f.submit %>
+    8: <% end %>
+  
+app/views/carts/new.html.erb:6:in `block in _app_views_carts_new_html_erb___1682921035497163504_70329349630640'
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___1682921035497163504_70329349630640'
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:22:04 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "purchases"."id" FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/carts/new.html.erb:5
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/carts/new.html.erb:5
+  Rendered carts/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 394ms (Views: 389.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-11 19:23:06 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/new.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb:10
+  Rendered carts/new.html.erb within layouts/application (130.4ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `items_path' for #<#<Class:0x007fedaccdc2f0>:0x007feda6ec6850>
+Did you mean?  items_new_path):
+    1: <h1>Purchase from the cart </h1>
+    2: 
+    3: <h3>Filter Purchasable Items</h3>
+    4: <%= form_for(@item) do |f| %>
+    5:   <%= f.collection_select :purchase_ids, Purchase.all, :name, :name %>
+    6:   <%= f.submit %>
+    7: <% end %>
+  
+app/views/carts/new.html.erb:4:in `_app_views_carts_new_html_erb___1682921035497163504_70329342249900'
+Started PUT "/__web_console/repl_sessions/71dae1c85671ca6566f04c4fe9219ac3" for 127.0.0.1 at 2018-07-11 19:23:18 -0400
+Started PUT "/__web_console/repl_sessions/71dae1c85671ca6566f04c4fe9219ac3" for 127.0.0.1 at 2018-07-11 19:23:19 -0400
+Started GET "/" for 127.0.0.1 at 2018-07-12 19:46:00 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 489ms (Views: 414.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-12 19:46:04 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (121.5ms)
+Completed 200 OK in 251ms (Views: 228.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-07-12 19:46:07 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x6Uvj0HJeHaVDpvVz77rtvmuq7QFpi3eekiNF42CymYi7LaXIeG2BSx4yIGoQzEBOZtLrSLErHX3V8eZWjC2RA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-12 19:46:07 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 54ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-07-12 19:46:08 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/sessions/new.html.erb:4
+  Rendered sessions/new.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 141ms (Views: 132.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2018-07-12 19:46:11 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K6nwKKaTXBUKApFpLsTaqipoWCfxXz7b6qg9mbM9j9tNp5Vg9QTQcdfo7x+6eGC7hpDHKhXKgU9gaJgCrMg7Ig==", "user"=>{"id"=>"2", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 70ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-07-12 19:46:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 77ms (Views: 71.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-12 19:46:14 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 107ms (Views: 98.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/purchases/1" for 127.0.0.1 at 2018-07-12 19:46:15 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:56
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 250ms (Views: 239.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-12 19:46:19 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 314ms (Views: 307.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2/purchases/new" for 127.0.0.1 at 2018-07-12 19:46:21 -0400
+Processing by PurchasesController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/_form.html.erb (11.6ms)
+  Rendered purchases/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 215ms (Views: 209.4ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mPurchase Load (6.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."purchase_id" = ? LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 11]]
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."purchase_id" = ? LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 11]]
+  [1m[36mPurchase Load (1.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."purchase_id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 1]]
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."purchase_id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 1]]
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."purchase_id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users/2/purchases/new" for 127.0.0.1 at 2018-07-12 20:33:45 -0400
+Processing by PurchasesController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/_form.html.erb (12.1ms)
+  Rendered purchases/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 249ms (Views: 235.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/purchases/new" for 127.0.0.1 at 2018-07-12 20:37:24 -0400
+Processing by PurchasesController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/_form.html.erb (30.3ms)
+  Rendered purchases/new.html.erb within layouts/application (34.2ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `purchase_item_comment' for #<Purchase id: nil, name: nil, price: nil, quantity: nil>):
+    14: 
+    15:   <div class="form-group">
+    16:     <%= f.label :comment %><br>
+    17:     <%= f.text_field :purchase_item_comment, class: "form-control" %></div>
+    18: 
+    19:   <div class="form-group">
+    20:     <%= f.submit class: "btn btn-primary" %>
+  
+app/views/purchases/_form.html.erb:17:in `block in _app_views_purchases__form_html_erb___3853857357952646222_70329422762520'
+app/views/purchases/_form.html.erb:1:in `_app_views_purchases__form_html_erb___3853857357952646222_70329422762520'
+app/views/purchases/new.html.erb:3:in `_app_views_purchases_new_html_erb__98562737436196721_70329416009500'
+  [1m[36mPurchase Load (1.3ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."purchase_id" = ? LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 11]]
+Started GET "/users/2/purchases/new" for 127.0.0.1 at 2018-07-12 20:48:09 -0400
+Processing by PurchasesController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/_form.html.erb (12.1ms)
+  Rendered purchases/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 185ms (Views: 163.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/purchases" for 127.0.0.1 at 2018-07-12 20:48:31 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s2xIGx3NpTsUO+bMZYoAsnOELgX7+mA6V3eTJlf0K/hWJdEDfeVrSK1NtZgCd9oFs7HOHNyY4ZHaaNmogEZX2g==", "purchase"=>{"name"=>"Bananas", "price"=>"1", "quantity"=>"10"}, "commit"=>"Create Purchase"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:24
+  [1m[36mPurchase Create (1.8ms)[0m  [1m[32mINSERT INTO "purchases" ("name", "price", "quantity") VALUES (?, ?, ?)[0m  [["name", "Bananas"], ["price", 1.0], ["quantity", 10]]
+  ↳ app/controllers/purchases_controller.rb:24
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:24
+Redirected to http://localhost:3000/purchases/15
+Completed 302 Found in 44ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/purchases/15" for 127.0.0.1 at 2018-07-12 20:48:31 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:56
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 92ms (Views: 87.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ? LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ? LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 11]]
+Started GET "/purchases" for 127.0.0.1 at 2018-07-12 21:01:35 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 346ms (Views: 325.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-07-12 21:01:37 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JnMxCJ6R/FIeriTtZgKH4Hb9uhx1llDMFsHKAK3vhObDOqgQ/rkyIafYd7kB/11XtshaBVL00Web3oCOel34xA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-12 21:01:37 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 58ms (Views: 53.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-07-12 21:01:39 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/sessions/new.html.erb:4
+  Rendered sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 118ms (Views: 95.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2018-07-12 21:01:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NYR6+RpmJw4r0K+xTUdzodMI9Tnd51cjyzkZAy7+/3xTih+xSfGravY60cfZ+8mwf/BqNDly6LdB+byYMQtLhQ==", "user"=>{"id"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 67ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-12 21:01:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 73ms (Views: 67.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-12 21:01:46 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 77ms (Views: 73.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/purchases/1" for 127.0.0.1 at 2018-07-12 21:01:50 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:56
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 83ms (Views: 79.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/items/new" for 127.0.0.1 at 2018-07-12 21:01:52 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"authenticity_token"=>"ITjreLgZ+NgPljKJFHi5EhQqG3VWLtJK5xH0LaWFqCLEcXJg2DE2q7bgYd1zhWOl1B/7bHFMU+FqDr6jcjfUAA==", "user_id"=>"1", "purchase_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:5
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:5
+  [1m[36mItem Create (1.0ms)[0m  [1m[32mINSERT INTO "items" ("user_id", "purchase_id") VALUES (?, ?)[0m  [["user_id", 1], ["purchase_id", 1]]
+  ↳ app/controllers/items_controller.rb:5
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:37
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "money" = ? WHERE "users"."id" = ?[0m  [["money", 45.0], ["id", 1]]
+  ↳ app/models/item.rb:37
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/item.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:40
+  [1m[36mPurchase Update (0.9ms)[0m  [1m[33mUPDATE "purchases" SET "quantity" = ? WHERE "purchases"."id" = ?[0m  [["quantity", 8], ["id", 1]]
+  ↳ app/models/item.rb:40
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/item.rb:40
+Redirected to http://localhost:3000/users/1?message=true
+Completed 302 Found in 59ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/users/1?message=true" for 127.0.0.1 at 2018-07-12 21:01:52 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"message"=>"true", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 81ms (Views: 74.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/cart" for 127.0.0.1 at 2018-07-12 21:01:54 -0400
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:3
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8
+  Rendered carts/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 80ms (Views: 69.1ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ? LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ? LIMIT ?[0m  [["purchase_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 1]]
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mItem Load (17.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/" for 127.0.0.1 at 2018-07-14 06:23:43 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 785ms (Views: 719.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-14 06:25:19 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 90ms (Views: 64.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-14 06:25:23 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 93ms (Views: 84.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/cart" for 127.0.0.1 at 2018-07-14 06:25:25 -0400
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:3
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8
+  Rendered carts/show.html.erb within layouts/application (73.7ms)
+Completed 200 OK in 123ms (Views: 114.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-14 06:25:32 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "purchases"."id" FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/carts/new.html.erb:5
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/carts/new.html.erb:5
+  Rendered carts/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 80ms (Views: 69.4ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-07-14 06:25:41 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W09DE+A3A7yPzQFg5I46lKk2tAH755l4HEFrKv7HyVa+BtoLgB/Nzza7UjSDc+AjaQNUGNyFGNORXiGkKXW1dA==", "user"=>{"purchase_ids"=>"Tortilla Chips"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+Unpermitted parameter: :purchase_ids
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-14 06:25:41 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 57ms (Views: 52.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/cart" for 127.0.0.1 at 2018-07-14 06:25:44 -0400
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:3
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8
+  Rendered carts/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 96ms (Views: 91.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/cart/new" for 127.0.0.1 at 2018-07-14 06:25:52 -0400
+Processing by CartsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "purchases"."id" FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/carts/new.html.erb:5
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/carts/new.html.erb:5
+  Rendered carts/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 40ms (Views: 36.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2018-07-14 06:27:55 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VeSmO1Dr88qKWZzf2MYbnIcHGn4jahTJmFrLw4NfO6awrT8jMMM9uTMvz4u/O8ErRzL6ZwQIlWIVRYFNVO1HhA==", "user"=>{"purchase_ids"=>"Snickers Minis"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+Unpermitted parameter: :purchase_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-14 06:27:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 53ms (Views: 49.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/cart" for 127.0.0.1 at 2018-07-14 06:50:39 -0400
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:3
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8
+  Rendered carts/show.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 119ms (Views: 101.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-14 06:50:40 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 174ms (Views: 167.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/purchases/2" for 127.0.0.1 at 2018-07-14 06:50:43 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:56
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 121ms (Views: 111.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/items/new" for 127.0.0.1 at 2018-07-14 06:50:45 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"authenticity_token"=>"rVdiSSiHCYekJmaeyHnAFG9ZtwO74Ru236tSOGGTPUFIHvtRSK/H9B1QNcqvhBqjr2xXGpyDmh1StBi2tiFBYw==", "user_id"=>"1", "purchase_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:5
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:5
+  [1m[36mItem Create (3.0ms)[0m  [1m[32mINSERT INTO "items" ("user_id", "purchase_id") VALUES (?, ?)[0m  [["user_id", 1], ["purchase_id", 2]]
+  ↳ app/controllers/items_controller.rb:5
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "money" = ? WHERE "users"."id" = ?[0m  [["money", 35.0], ["id", 1]]
+  ↳ app/models/item.rb:37
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/item.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/item.rb:40
+  [1m[36mPurchase Update (0.4ms)[0m  [1m[33mUPDATE "purchases" SET "quantity" = ? WHERE "purchases"."id" = ?[0m  [["quantity", 7], ["id", 2]]
+  ↳ app/models/item.rb:40
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/item.rb:40
+Redirected to http://localhost:3000/users/1?message=true
+Completed 302 Found in 62ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/users/1?message=true" for 127.0.0.1 at 2018-07-14 06:50:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"message"=>"true", "id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 76ms (Views: 65.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1/cart" for 127.0.0.1 at 2018-07-14 06:50:52 -0400
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:3
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "purchases" INNER JOIN "items" ON "purchases"."id" = "items"."purchase_id" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8
+  Rendered carts/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 92ms (Views: 86.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-07-14 06:51:54 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  Rendered purchases/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 125ms (Views: 120.5ms | ActiveRecord: 0.5ms)
+
+

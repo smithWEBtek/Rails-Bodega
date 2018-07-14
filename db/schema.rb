@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2018_06_14_000947) do
   create_table "items", force: :cascade do |t|
     t.integer "user_id"
     t.integer "purchase_id"
+    t.string "comment"
     t.index ["purchase_id"], name: "index_items_on_purchase_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end

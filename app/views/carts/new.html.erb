@@ -1,9 +1,20 @@
 <h1>Purchase from the cart </h1>
 
 <h3>Filter Purchasable Items</h3>
-<%= form_for @purchases, url: "/items/new" do |f|%>
-
-  <div class="field"><%= f.label :purchase, 'Select the item you want to buy' %><br>
-    <%= f.collection_select(:id, @purchases, :id, :purchase) %>
-  </div>
+<%= form_for(@user, :url => items_new) do |f| %>
+  <%= f.collection_select :purchase_ids, Purchase.all, :name, :name %>
+  <%= f.submit %>
 <% end %>
+
+<!--
+I need to find the purchase by the id
+Select the purchase
+
+Is the next thing I'm filling in purchase.item.comment?
+what method here can I use to grab the items comment
+
+I want to create a new item with a comment
+
+the run  @item.buy_item
+
+-->
