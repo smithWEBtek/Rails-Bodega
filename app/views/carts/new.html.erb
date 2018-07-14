@@ -1,8 +1,13 @@
 <h1>Purchase from the cart </h1>
 
 <h3>Filter Purchasable Items</h3>
-<%= form_for(@user, :url => items_new) do |f| %>
-  <%= f.collection_select :purchase_ids, Purchase.all, :name, :name %>
+<%= form_for(@user) do |f| %>
+  <%= f.collection_select :purchase_ids, @user.cart, :name, :name %>
+
+  <%= f.fields_for :item do |s| %>
+    <%= s.label :comment %>
+    <%= s.text_field :comment %>
+  <% end %>
   <%= f.submit %>
 <% end %>
 
