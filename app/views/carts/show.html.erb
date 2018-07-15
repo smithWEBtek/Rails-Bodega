@@ -28,5 +28,6 @@
 
 <strong>Number of Items:</strong> <%= @user.num_of_items %><br>
 <strong>Total:</strong> $<%= @user.cart_total %><br></br>
+<%= link_to 'Buy Something', new_user_cart_path(@user), {:class => "btn btn-primary"} %>
 <%= link_to 'Purchases', purchases_path, {:class => "btn btn-primary"} %><br><br>
-<%= link_to 'Profile', user_path(@user), {:class => "btn btn-primary"} %>
+<%= link_to 'Profile', user_path(@user), {:class => "btn btn-primary"} %><br><br>

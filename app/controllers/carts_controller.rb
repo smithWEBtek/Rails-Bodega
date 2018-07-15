@@ -5,7 +5,8 @@ class CartsController < ApplicationController
 
   def new
     @item = Item.new
-    @items = Item.all
     @user = User.find(params[:user_id])
+    @purchase = Purchase.new
   end
+
 end

@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :items
   has_many :purchases, :through => :items
 
+  accepts_nested_attributes_for :items
+
   def num_of_items
     self.purchases.count
   end
@@ -11,7 +13,7 @@ class User < ActiveRecord::Base
   def cart
     # Shows the collection of purchases the user has
     self.purchases.each do |purchase|
-      purchase.name 
+      purchase.name
     end
   end
 

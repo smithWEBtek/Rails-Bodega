@@ -8,6 +8,7 @@ class PurchasesController < ApplicationController
 
   def show
     @item = Item.new
+
   end
 
   def new
