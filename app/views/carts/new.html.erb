@@ -1,7 +1,7 @@
 <h1>Purchase from the cart </h1>
 
 
-<%= form_for(@purchase, :post => 'items_new_path') do |f| %>
+<%= form_for(@user) do |f| %>
 
   <div class="form-group">
     <%= f.collection_select :user_ids, Purchase.all, :name, :name %></div>
