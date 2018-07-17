@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   def new
      # Join table method that creates a new item that connects a user to a purchase
     @item = Item.find_by(:user_id => params[:user_id], :purchase_id => params[:purchase_id])
-    binding.pry
     if @item == nil
       @item = Item.create(
         :user_id => params[:user_id],
@@ -12,7 +11,6 @@ class ItemsController < ApplicationController
       )
     else
       @item.quantity += 1
-      binding.pry
       @item.save
       # make sure quantity going up by 1
       # go to item index for a user and show the quantity,
