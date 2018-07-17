@@ -6,27 +6,17 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :items
 
-  def num_of_items
-    self.purchases.count
-  end
-
-  def cart
-    # Shows the collection of purchases the user has
-    self.purchases.each do |purchase|
-      purchase.name
-    end
-  end
-
-  def cart_total
-    # Gives the total price of all the purchases the user made
-    self.purchases.sum do |purchase|
-      purchase.price
-    end
-  end
-
   def cart_quantity
+    # Gives the total quantity of items of a user
     self.items.sum do |item|
       item.quantity
+    end
+  end
+
+  def cart_price
+    # Adds up the total price of the users item
+    self.items.sum do |item|
+      Purchase.find(item.purchase_id).price * item.quantity
     end
   end
 
