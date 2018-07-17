@@ -20,5 +20,12 @@ class ItemsController < ApplicationController
     redirect_to user_path(@item.user, :message => @message)
   end
 
+  def edit
+    @item = Item.find(params[:id])
+    binding.pry
+  end
+
+  def update
+  end
 
 end
