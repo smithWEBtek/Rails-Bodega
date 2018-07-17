@@ -14,20 +14,26 @@
       <td><strong>Name</strong></td>
       <td><strong>Price</strong></td>
     </tr>
+
 <% @user.cart.each do |cart_item| %>
   <tr>
 
     <td><%= cart_item.name %></td>
     <td><%= cart_item.price %></td>
+  </tr>
+    <% end %>
+
+  <% @user.items.each do |item| %>
+    <tr>
+      <td><%= item.purchase_id %></td>
+      <td><%= item.quantity %></td>
     </tr>
     <% end %>
     </tbody>
 </table>
 <br>
 
-
-<strong>Number of Items:</strong> <%= @user.num_of_items %><br>
+<strong>Number of Items:</strong> <%= @user.items.count %><br>
 <strong>Total:</strong> $<%= @user.cart_total %><br></br>
-<%= link_to 'Buy Something', new_user_cart_path(@user), {:class => "btn btn-primary"} %>
 <%= link_to 'Purchases', purchases_path, {:class => "btn btn-primary"} %><br><br>
 <%= link_to 'Profile', user_path(@user), {:class => "btn btn-primary"} %><br><br>

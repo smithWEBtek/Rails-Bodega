@@ -5,7 +5,6 @@ class CartsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
-    @item = @user.items.build
     @purchase = Purchase.new
   end
 

@@ -23,4 +23,12 @@ class User < ActiveRecord::Base
       purchase.price
     end
   end
+
+  def cart_quantity
+    self.items.sum do |item|
+      item.quantity
+    end
+  end
+
+
 end

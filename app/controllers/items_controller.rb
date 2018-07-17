@@ -13,7 +13,8 @@ class ItemsController < ApplicationController
     else
       @item.quantity += 1
       binding.pry
-      # make sure quantity going up by
+      @item.save
+      # make sure quantity going up by 1
       # go to item index for a user and show the quantity,
       # Make an edit link next to item, click edit, item show page, and only thing you can change is the quantity, prepopulated input field
     end
