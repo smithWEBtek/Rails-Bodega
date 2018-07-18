@@ -12,4 +12,8 @@ class Purchase < ActiveRecord::Base
     order("price ASC").first
   end
 
+  def self.average_price
+    average("price")
+  end
+
 end
