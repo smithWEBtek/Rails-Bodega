@@ -25,9 +25,8 @@ class ItemsController < ApplicationController
   end
 
   def update
-    binding.pry
     @item = Item.find(params[:id])
-    @item.update(quantity: params[:quantity])
+    @item.update(quantity: params[:item][:quantity])
     redirect_to user_cart_index_url(current_user)
   end
 
