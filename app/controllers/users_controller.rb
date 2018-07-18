@@ -18,6 +18,7 @@ class UsersController < ApplicationController
         format.html {redirect_to user_path(@user), notice: "Welcome to the Bodega!"}
       else
         format.html {render 'new'}
+        flash[:notice] = "Please add a value to every line."
       end
     end
   end

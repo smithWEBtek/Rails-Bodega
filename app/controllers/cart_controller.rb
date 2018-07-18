@@ -4,7 +4,4 @@ class CartController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def show
-    @item = User.items.find(params[:id])
-  end
 end

@@ -22,10 +22,13 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    binding.pry
   end
 
   def update
+    binding.pry
+    @item = Item.find(params[:id])
+    @item.update(quantity: params[:quantity])
+    redirect_to user_cart_index_url(current_user)
   end
 
 end

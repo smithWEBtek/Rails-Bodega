@@ -17,15 +17,18 @@ class SessionsController < ApplicationController
       @user.money = 25
       @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user), notice: "Welcome to The Bodega!!"
+      redirect_to user_path(@user)
+      flash[:notice] = "Welcome to The Bodega!!"
     elsif
-      @user = User.find_by(id: params[:user][:id])
+      @user = User.find_by(name: params[:user][:name])
       if @user && @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
         redirect_to user_path(@user), notice: "Welcome to The Bodega!!"
+        flash[:notice] = "Welcome to The Bodega!!"
       end
     else
       redirect_to signin_path
+      flash[:notice] = "Please enter a valid name and/or password"
     end
   end
 
