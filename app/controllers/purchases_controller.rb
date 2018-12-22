@@ -4,6 +4,10 @@ class PurchasesController < ApplicationController
   def index
     @purchases = Purchase.all
     @user = User.find(session[:user_id])
+    respond_to do |f|
+      f.html { render :index }
+      f.json { render json: @purchases}
+    end
   end
 
   def show
