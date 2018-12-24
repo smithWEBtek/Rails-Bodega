@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   get 'signin', to: "sessions#new"
   post "/sessions/create", to: "sessions#create"
   delete '/signout', to: "sessions#destroy"
-  get '/auth/facebook/callback' => 'sessions#create'
+	get '/auth/facebook/callback' => 'sessions#create'
+	
   resources :users do
     resources :cart, only: [:index]
     resources :purchases, only: [:new]
-  end
+	end
+	
   resources :items, only: [:new, :edit, :update]
   resources :purchases
 end

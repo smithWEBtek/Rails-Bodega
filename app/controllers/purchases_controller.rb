@@ -3,12 +3,21 @@ class PurchasesController < ApplicationController
 
   def index
     @purchases = Purchase.all
-    @user = User.find(session[:user_id])
+		@user = User.find(session[:user_id])
+
+		@purchases = @user.purchases
+		respond_to do |f|
+			f.html { render :index }
+			f.json { render json: @purchases}
+		end
   end
 
   def show
     @item = Item.new
-
+		respond_to do |f|
+			f.html { render :index }
+			f.json { render json: @item}
+		end
   end
 
   def new
