@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.3'
 
+gem 'jquery-rails'
+
+gem 'active_model_serializers'
+
 # bootstrap
 gem 'bootstrap-sass', '3.3.7'
 
@@ -37,7 +41,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'jquery-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
