@@ -3,7 +3,7 @@ $(function() {
     alert("You clicked this link")
     $.ajax({
       method: "GET",
-      url: this.href,
+      url: this.href
     }).done(function( data ) {
 
       console.log(data);
