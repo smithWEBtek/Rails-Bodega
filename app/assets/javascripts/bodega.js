@@ -7,6 +7,7 @@ $(function() {
     }).done(function( data ) {
 
       console.log(data);
+      debugger;
   });
     e.preventDefault();
   })
