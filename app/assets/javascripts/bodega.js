@@ -1,13 +1,11 @@
 $(function() {
   $("a.see_cart").on("click", function(e){
-    alert("You clicked this link")
     $.ajax({
       method: "GET",
       url: this.href
-    }).done(function( data ) {
+    }).done(function( response ) {
 
-      console.log(data);
-      debugger;
+      $("div.cart").html(response)
   });
     e.preventDefault();
   })
