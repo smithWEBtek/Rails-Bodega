@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    <tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Price</strong></td>
+      <td><strong>Quantity</strong></td>
+    </tr>
+
+  <% @user.items.each do |item| %>
+    <tr>
+      <td><%= Purchase.find(item.purchase_id).name %></td>
+      <td>$<%= Purchase.find(item.purchase_id).price %></td>
+      <td><%= item.quantity %> &nbsp; &nbsp; &nbsp; <%= link_to 'Edit',"/items/#{item.id}/edit" %></td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
+<br>
