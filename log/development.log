@@ -74259,3 +74259,97 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 97ms (Views: 89.9ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/items/1/edit" for 127.0.0.1 at 2018-12-28 10:01:37 -0500
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:24
+  Rendering items/edit.html.erb within layouts/application
+  [1m[36mPurchase Load (2.3ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/items/edit.html.erb:1
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/items/edit.html.erb:3
+  Rendered items/edit.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 256ms (Views: 216.1ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-12-28 10:01:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mItem Load (6.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/cart/_cart.html.erb:15
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:17
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:18
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:17
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:18
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:17
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:18
+  [1m[36mPurchase Load (1.7ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:17
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:18
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:17
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:18
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:17
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:18
+  Rendered cart/_cart.html.erb (30.5ms)
+  Rendered users/show.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 106ms (Views: 86.1ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-12-28 11:07:54 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mItem Load (7.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/cart/_cart.html.erb:17
+  [1m[36mPurchase Load (3.6ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:19
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:20
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:19
+  [1m[36mCACHE Purchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:20
+  [1m[36mPurchase Load (0.7ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:19
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:20
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:19
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:20
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:19
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:20
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:19
+  [1m[36mCACHE Purchase Load (0.0ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart/_cart.html.erb:20
+  Rendered cart/_cart.html.erb (147.4ms)
+  Rendered users/show.html.erb within layouts/application (206.8ms)
+Completed 200 OK in 653ms (Views: 570.8ms | ActiveRecord: 22.5ms)
+
+
