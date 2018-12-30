@@ -74471,3 +74471,132 @@ Processing by PurchasesController#index as JSON
 Completed 200 OK in 260ms (Views: 250.5ms | ActiveRecord: 5.9ms)
 
 
+Started GET "/purchases" for 127.0.0.1 at 2018-12-30 08:18:58 -0500
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.8ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("purchases"."price") FROM "purchases"[0m
+  ↳ app/models/purchase.rb:16
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY price DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/purchase.rb:8
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY price ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/purchase.rb:12
+  Rendered purchases/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 130ms (Views: 103.1ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-12-30 08:19:00 -0500
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("purchases"."price") FROM "purchases"[0m
+  ↳ app/models/purchase.rb:16
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY price DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/purchase.rb:8
+  [1m[36mPurchase Load (0.8ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY price ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/purchase.rb:12
+  Rendered purchases/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 70ms (Views: 66.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/purchases/1" for 127.0.0.1 at 2018-12-30 08:19:02 -0500
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:64
+  Rendering purchases/index.html.erb within layouts/application
+  Rendered purchases/index.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    14:       <td><strong>Amount in Stock</strong></td>
+    15:       <td><strong>Details</strong></td>
+    16:     </tr>
+    17:     <% @purchases.each do |purchase| %>
+    18:       <tr>
+    19: 
+    20:         <td><%= purchase.name %></td>
+  
+app/views/purchases/index.html.erb:17:in `_app_views_purchases_index_html_erb___1604501247033352402_70278882921960'
+app/controllers/purchases_controller.rb:16:in `block (2 levels) in show'
+app/controllers/purchases_controller.rb:15:in `show'
+Started GET "/purchases/1" for 127.0.0.1 at 2018-12-30 08:19:32 -0500
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.8ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:61
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 85ms (Views: 38.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/purchases/1" for 127.0.0.1 at 2018-12-30 08:20:53 -0500
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:64
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 65ms (Views: 37.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-12-30 08:20:57 -0500
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("purchases"."price") FROM "purchases"[0m
+  ↳ app/models/purchase.rb:16
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY price DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/purchase.rb:8
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY price ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/purchase.rb:12
+  Rendered purchases/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/purchases/1" for 127.0.0.1 at 2018-12-30 08:20:58 -0500
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.1ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:64
+  Rendering purchases/show.html.erb within layouts/application
+  Rendered purchases/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/purchases/1.json" for 127.0.0.1 at 2018-12-30 08:21:04 -0500
+Processing by PurchasesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:64
+[active_model_serializers] Rendered ItemSerializer with ActiveModelSerializers::Adapter::Attributes (21.88ms)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 0.6ms)
+
+
