@@ -12,7 +12,10 @@ class PurchasesController < ApplicationController
 
   def show
     @item = Item.new
-
+    respond_to do |f|
+      f.html { render :index }
+      f.json { render json: @item}
+    end
   end
 
   def new

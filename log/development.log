@@ -74353,3 +74353,121 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 653ms (Views: 570.8ms | ActiveRecord: 22.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-12-30 08:15:00 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/family/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (62.4ms)
+Completed 200 OK in 896ms (Views: 835.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/purchases" for 127.0.0.1 at 2018-12-30 08:15:06 -0500
+Processing by PurchasesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  Rendering purchases/index.html.erb within layouts/application
+  [1m[36mPurchase Load (1.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/views/purchases/index.html.erb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("purchases"."price") FROM "purchases"[0m
+  ↳ app/models/purchase.rb:16
+  [1m[36mPurchase Load (0.7ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY price DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/purchase.rb:8
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY price ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/purchase.rb:12
+  Rendered purchases/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 129ms (Views: 111.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/purchases.json" for 127.0.0.1 at 2018-12-30 08:15:09 -0500
+Processing by PurchasesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:6
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases"[0m
+  ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 1]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 1]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 2]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 2]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 3]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 3]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 4]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 4]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 5]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 5]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 6]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 6]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 10]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 10]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 11]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 11]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 12]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 12]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 13]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 13]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 14]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 14]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 15]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 15]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 16]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 16]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 17]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 17]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 18]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 18]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 19]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 19]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 20]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 20]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 21]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 21]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 22]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "items" ON "users"."id" = "items"."user_id" WHERE "items"."purchase_id" = ?[0m  [["purchase_id", 22]]
+[active_model_serializers]   ↳ app/controllers/purchases_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (202.64ms)
+Completed 200 OK in 260ms (Views: 250.5ms | ActiveRecord: 5.9ms)
+
+
