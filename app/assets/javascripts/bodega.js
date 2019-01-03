@@ -10,3 +10,7 @@ $(function() {
     e.preventDefault();
   })
 })
+
+$(function() {
+  console.log("hello")
+})
