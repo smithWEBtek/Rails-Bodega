@@ -12,5 +12,7 @@ $(function() {
 })
 
 $(function() {
-  console.log("hello")
+  $("a.purchases").on("click", function(e){
+    alert("You clicked this")
+  })
 })
